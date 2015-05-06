@@ -1,0 +1,18 @@
+#!/usr/bin/env php
+<?php
+
+require __DIR__.'/../vendor/autoload.php';
+
+$app     = require_once __DIR__.'/../src/application.php';
+$climate = new League\CLImate\CLImate;
+
+$command = $GLOBALS['argv'][1];
+
+if ($command == 'blog:build') {
+    if ($app->blog->build()) {
+        return $climate->green()->out('Blog contents succesfully built');
+    }
+    return $climate->red()->out('Something went wrong :(');
+}
+
+return $climate->red()->out('No valid command specified');

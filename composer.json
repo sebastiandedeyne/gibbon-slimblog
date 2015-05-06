@@ -1,0 +1,8 @@
+{
+    "require": {
+        "slim/slim": "~2.6",
+        "gibboncms/gibbon": "dev-master",
+        "gibboncms/blog": "dev-master",
+        "league/climate": "~3.1"
+    }
+}
